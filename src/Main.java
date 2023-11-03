@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-       //Scanner scan = new Scanner(System.in);
+       //Scanner  scan = new Scanner(System.in);
         readWrite reader = new readWrite();
         theCounter counter = new theCounter();
         String[] myArray = new String[20];
