@@ -1,24 +1,24 @@
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
 
     public static void main(String[] args) {
 
-        //Scanner scan = new Scanner(System.in);
         String textDump;
-        readWrite readAndWrite = new readWrite();
+        readWrite readWriter = new readWrite();
         theCounter counter = new theCounter();
 
 
-        while (readAndWrite.isRun()){
+        while (true){
 
-            textDump = readAndWrite.read();
+            textDump = readWriter.read();
+            if(!readWriter.isRun()){
+                break;
+            }
             counter.countingRader();
             counter.countingTecken(textDump);
 
         }
-        readAndWrite.write(counter.getRowCount(),counter.getCharCount());
+        readWriter.write(counter.getRowCount(),counter.getCharCount());
     }
 }
 

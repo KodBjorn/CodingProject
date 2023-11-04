@@ -2,7 +2,10 @@ import java.util.Scanner;
 
 public class readWrite {
 
+
     private boolean run = true;
+    private static String text;
+    private Scanner scan = new Scanner(System.in);
 
     public boolean isRun() {
         return run;
@@ -11,14 +14,16 @@ public class readWrite {
     public void setRun(boolean run) {
         this.run = run;
     }
-
+    public static void setText(String text) {
+        readWrite.text = text;
+    }
     public String read (){
 
-        Scanner scan = new Scanner(System.in);
-        if (scan.nextLine().equalsIgnoreCase("stop")){
+        text = scan.nextLine();
+        if (text.equals("stop")){
             setRun(false);
         }
-        return scan.nextLine();
+        return text;
     }
     public void write (int rowCount, int charCount){
         System.out.println("Du har skrivit " + rowCount + " rader.");
