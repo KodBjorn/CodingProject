@@ -2,32 +2,27 @@ import java.util.Scanner;
 
 public class readWrite {
 
-    public void read (String[] myArray){
+    private boolean run = true;
 
-        int possition = 0;
+    public boolean isRun() {
+        return run;
+    }
+
+    public void setRun(boolean run) {
+        this.run = run;
+    }
+
+    public String read (){
 
         Scanner scan = new Scanner(System.in);
-
-        while (true){
-
-            myArray[possition] = scan.nextLine();
-
-            if (myArray[possition].equals("stop")){
-                break;
-            }
-            possition++;
-
+        if (scan.nextLine().equalsIgnoreCase("stop")){
+            setRun(false);
         }
-
+        return scan.nextLine();
     }
-    public void write (String[] myArray,int antalRader, int antalTecken){
-
-        for (int i = 0; i<20; i++){
-            if (myArray[i].isEmpty() || myArray[i].equals("stop")) {
-
-            }else System.out.println(myArray[i]);
-        }
-        System.out.println("Du har skrivit " + antalRader + " rader.");
-        System.out.println("och du har skrivit " + antalTecken + " tecken.");
+    public void write (int rowCount, int charCount){
+        System.out.println("Du har skrivit " + rowCount + " rader.");
+        System.out.println("och du har skrivit " + charCount + " tecken.");
     }
 }
+

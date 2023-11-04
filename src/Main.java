@@ -5,18 +5,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-       //Scanner  scan = new Scanner(System.in);
-        readWrite reader = new readWrite();
+        //Scanner scan = new Scanner(System.in);
+        String textDump;
+        readWrite readAndWrite = new readWrite();
         theCounter counter = new theCounter();
-        String[] myArray = new String[20];
-        for (int i = 0; i<20; i++) {
-            myArray[i] = "";
+
+
+        while (readAndWrite.isRun()){
+
+            textDump = readAndWrite.read();
+            counter.countingRader();
+            counter.countingTecken(textDump);
+
         }
-
-        reader.read(myArray);
-        counter.countingRader(myArray);
-        reader.write(myArray,counter.countingRader(myArray),counter.countingTecken(myArray));
-
-
+        readAndWrite.write(counter.getRowCount(),counter.getCharCount());
     }
 }
+

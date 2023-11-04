@@ -1,28 +1,29 @@
 
 public class theCounter {
-    public int countingRader (String[] myArray){
 
-        int antalRader = 0;
-
-        for (int i = 0; i < 20; i++) {
-
-            if (myArray[i].isEmpty() || myArray[i].equals("stop")){
-
-            }else antalRader++;
-        }
-        return antalRader;
+    public static int rowCount = 0;
+    public static int charCount = 0;
+    public theCounter() {
     }
-    public int countingTecken (String[] myArray){
 
-        int antalTecken = 0;
+    public static int getRowCount() {
 
-        for (int i = 0; i < 20; i++) {
+        return rowCount;
+    }
 
-            if (myArray[i].isEmpty() || myArray[i].equals("stop")){
+    public static int getCharCount() {
 
-            } else antalTecken = antalTecken + myArray[i].replaceAll("\\s+", "").length();
+        return charCount;
+    }
 
-        }
-        return antalTecken;
+    public void countingRader (){
+
+        rowCount++;
+    }
+    public void countingTecken (String text){
+
+        charCount = charCount + text.replaceAll("\\s+", "").length();
     }
 }
+
+
