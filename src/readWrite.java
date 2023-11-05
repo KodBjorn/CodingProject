@@ -5,6 +5,7 @@ public class readWrite {
 
     private boolean run = true;
     private static String text;
+
     private Scanner scan = new Scanner(System.in);
 
     public boolean isRun() {
