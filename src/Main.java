@@ -11,7 +11,11 @@ public class Main {
         while (true){
 
             textDump = readWriter.read();
-            if(!readWriter.isRun()){
+            //if(!readWriter.isRun()){
+            //    break;
+            //}
+            counter.countLongestWordChar(textDump);
+            if(!counter.isRunning()) {
                 break;
             }
             counter.countingRader();
@@ -19,6 +23,8 @@ public class Main {
 
         }
         readWriter.write(counter.getRowCount(),counter.getCharCount());
+        readWriter.writeLongest(counter.getLongestWord());
+        readWriter.customWriter(counter.getWordCount());
     }
 }
 

@@ -28,7 +28,7 @@ public class programTest {
         assertEquals(expected,actual);
     }
     @Test
-    public void readTestCase (){
+    public void runTestCase (){
 
         Boolean expected = false;
 
@@ -41,5 +41,38 @@ public class programTest {
     @Test
     public void writeTestCase (){
         readWriter.write(4,54);
+    }
+    @Test
+    public void wordCountTestCase (){
+
+        int expected = 4;
+
+        count.countLongestWordChar("Longest Word Out There");
+
+        int actual = count.getWordCount();
+
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void longestWordTestCase (){
+
+        String expected = "Longest";
+
+        count.countLongestWordChar("Longest Word Out There");
+
+        String actual = count.getLongestWord();
+
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void newRunTestCase(){
+
+        boolean expected = false;
+
+        count.countLongestWordChar("stop");
+
+        boolean actual = count.isRunning();
+
+        assertEquals(expected,actual);
     }
 }

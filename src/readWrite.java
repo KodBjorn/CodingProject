@@ -4,9 +4,8 @@ public class readWrite {
 
 
     private boolean run = true;
-    private static String text;
 
-    private Scanner scan = new Scanner(System.in);
+    private final Scanner scan = new Scanner(System.in);
 
     public boolean isRun() {
         return run;
@@ -15,12 +14,9 @@ public class readWrite {
     public void setRun(boolean run) {
         this.run = run;
     }
-    public static void setText(String text) {
-        readWrite.text = text;
-    }
     public String read (){
 
-        text = scan.nextLine();
+        String text = scan.nextLine();
         if (text.equals("stop")){
             setRun(false);
         }
@@ -29,6 +25,12 @@ public class readWrite {
     public void write (int rowCount, int charCount){
         System.out.println("Du har skrivit " + rowCount + " rader.");
         System.out.println("och du har skrivit " + charCount + " tecken.");
+    }
+    public void writeLongest (String text){
+        System.out.println("Det längsta ordet du skrev är " + text);
+    }
+    public void customWriter (int wordCount){
+        System.out.println("Du har skrivit " + wordCount + " ord");
     }
 }
 
